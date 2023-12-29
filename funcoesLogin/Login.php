@@ -48,36 +48,47 @@ if(isset($_POST["email"]) || isset($_POST["senha"])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:wght@700&display=swap" rel="stylesheet">
     <title>Form-login</title>
-    <style>
-      body{
-        background:linear-gradient(#01084A, #1F2663, #2F3996, #021096, #010E7D);
+    <style>    
+     body{
+        background: #101026;
         background-repeat: no-repeat;
         background-size: 100% 1080px;
       }
-      #Formulario{
-        padding:20px;
-        background:linear-gradient(45deg, #808080,#968A87,#8C827E,#96878F,#8C7E8C);
+      #Formulario {
+        padding: 20px;
+        padding-left: 10px;
+        background: linear-gradient(45deg, #808080, #968A87, #8C827E, #96878F, #8C7E8C);
         border-radius: 10px;
         max-width: 300px;
-        position:absolute;
-        top:25%;
-        left: 65%;
-        scale: 1.3;
-        box-shadow: 0px 0px 19px rgb(0,0,0 ,0.5);
+        position: absolute;
+        top: 25%;
+        left: 50%; 
+        transform: translateX(-50%); 
+        box-shadow: 0px 0px 19px rgb(0, 0, 0, 0.5);
         font-family: 'Lato', sans-serif;
         perspective: 1080px;
+        text-align: center;
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
       }
       #email{
         padding: 15px;
-        border-radius: 5px;
+        border-radius: 15px;
         box-shadow: 0px 0px 19px rgb(0,0,0,0.30);
         border:none;
+        
+        transition:0.5s all;
+
       }
       #Password{
         padding: 15px;
-        border-radius: 5px;
+        border-radius: 15px;
         box-shadow: 0px 0px 19px rgb(0,0,0,0.30);
         border:none;
+        
+        transition:0.5s all;
+
       }
       #Butn{
         width: 287px;
@@ -87,6 +98,7 @@ if(isset($_POST["email"]) || isset($_POST["senha"])) {
         color: beige;
         background: #101026;
         cursor: pointer;
+        translate: 6.8px;
         transition: all 0.3s;
         font-size: 20px;
       }
@@ -98,11 +110,28 @@ if(isset($_POST["email"]) || isset($_POST["senha"])) {
       }
       .scale{
        width: 260px;
+       height: 30px;
+       align-items: center;
+       justify-content: center;
        font-size: 15px;
-        transform: scaleX(1)  translateX(12px);
+       transform: scaleX(1)  translateX(8px);
         
-       transition:0.3s all;
+       transition:0.5s all;
      
+      }
+      #registra{
+        text-decoration: none;
+        color:#fff;
+        padding: 10px;
+        border-radius: 10px;
+        transition: all 0.3s;
+        background: #101026;
+      }
+      #registra:hover{
+        background: #101026;
+        color: #fff;
+        transform: scale(1.01);
+        box-shadow:0px 0px 15px #292A42;
       }
       
     </style>
@@ -111,7 +140,7 @@ if(isset($_POST["email"]) || isset($_POST["senha"])) {
 <body>
  <div id="Formulario"> 
   <img id="Logo" src="">
-   <form action="" method="POST">
+   <form action="" method="POST" autocomplete="off" >
     <p id="LB-email">
      
         <input type="email" name="email" id="email" placeholder="E-mail" onclick="sizer(email)">
@@ -123,6 +152,10 @@ if(isset($_POST["email"]) || isset($_POST["senha"])) {
     <p>
         <button type="submit" id="Butn">Entrar</button>
     </p>
+    <p>
+        <a href="./Register.php" id="registra">Registrar</a>
+    </p>
+
 </div>  
 
 
